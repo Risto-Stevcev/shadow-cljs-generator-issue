@@ -1,0 +1,24 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev"
+  "src/main"
+  "src/test"]
+
+ :dependencies
+ []
+
+ :dev-http
+ {8020 "public"}
+
+ :builds
+ {:app
+  {:target :browser
+   :output-dir "public/js"
+   :asset-path "/js"
+   :compiler-options {:output-feature-set :es-next}
+   ;:js-options {:js-provider :closure}
+   :source-map-detail-level :all
+
+   :modules
+   {:main
+    {:init-fn example.core/init}}}}}
